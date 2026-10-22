@@ -1,0 +1,832 @@
+/* =========================================================
+   CHAMADOS PENDENTES
+   Visual baseado no projeto original
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* =========================================================
+   CORPO
+   ========================================================= */
+
+body {
+    min-height: 100vh;
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(8, 18, 33, 0.82),
+            rgba(15, 45, 78, 0.88)
+        ),
+        url("../img/fundo2.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    padding: 30px;
+}
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 32px;
+    color: #4FC3F7;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #D1D5DB;
+    font-size: 15px;
+}
+
+.versao {
+    background: #1E88E5;
+    padding: 8px 15px;
+    border-radius: 20px;
+    white-space: nowrap;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* =========================================================
+   BLOCOS PRINCIPAIS
+   ========================================================= */
+
+.formulario,
+.lista,
+.pesquisa {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #81D4FA;
+    font-size: 21px;
+}
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(230px, 1fr)
+        );
+
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+/* =========================================================
+   CAMPOS
+   ========================================================= */
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #EEF3F8;
+    color: #222;
+
+    outline: none;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    box-shadow:
+        0 0 0 2px rgba(79, 195, 247, 0.6);
+}
+
+textarea {
+    resize: none;
+    margin-bottom: 20px;
+    min-height: 100px;
+}
+
+/* =========================================================
+   BOTÃO PRINCIPAL
+   ========================================================= */
+
+button {
+    width: 100%;
+
+    background: #00C853;
+    color: white;
+
+    border: none;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #00B248;
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.card {
+    background: #16385C;
+
+    border-left: 8px solid #4FC3F7;
+
+    border-radius: 15px;
+
+    padding: 18px;
+    margin-top: 15px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card.verde {
+    border-color: #00E676;
+}
+
+.card.amarelo {
+    border-color: #FFD54F;
+}
+
+.card.vermelho {
+    border-color: #FF5252;
+}
+
+/* =========================================================
+   INFORMAÇÕES
+   ========================================================= */
+
+.info {
+    display: flex;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.info h3 {
+    font-size: 19px;
+    color: white;
+}
+
+.card p {
+    margin-top: 8px;
+
+    color: #E5E7EB;
+
+    line-height: 1.5;
+
+    font-size: 14px;
+}
+
+.card strong {
+    color: #90CAF9;
+}
+
+/* =========================================================
+   BADGES
+   ========================================================= */
+
+.badge {
+    background: #0D223A;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    color: #90CAF9;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* =========================================================
+   TEMPO
+   ========================================================= */
+
+.tempo {
+    font-weight: 700;
+
+    color: #FFD54F !important;
+
+    margin-top: 15px !important;
+}
+
+/* =========================================================
+   AÇÕES DOS CARDS
+   ========================================================= */
+
+.acoes {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 15px;
+
+    flex-wrap: wrap;
+}
+
+.acoes button {
+    flex: 1;
+
+    min-width: 160px;
+
+    font-size: 14px;
+
+    padding: 12px;
+}
+
+/* =========================================================
+   BOTÃO TEAMS
+   ========================================================= */
+
+.btnTeams {
+    background: #635BFF;
+}
+
+.btnTeams:hover {
+    background: #5148E5;
+}
+
+/* =========================================================
+   BOTÃO E-MAIL
+   ========================================================= */
+
+.btnEmail {
+    background: #1565C0;
+}
+
+.btnEmail:hover {
+    background: #0D47A1;
+}
+
+/* =========================================================
+   BOTÃO CHAMADO RECEBIDO
+   ========================================================= */
+
+.btnRecebido {
+    background: #00897B;
+}
+
+.btnRecebido:hover {
+    background: #00695C;
+}
+
+/* =========================================================
+   BOTÃO EXCLUIR
+   ========================================================= */
+
+.btnExcluir {
+    background: #D32F2F;
+}
+
+.btnExcluir:hover {
+    background: #B71C1C;
+}
+
+/* =========================================================
+   PESQUISA
+   ========================================================= */
+
+.pesquisa input {
+    background: #EEF3F8;
+    color: #222;
+}
+
+/* =========================================================
+   CONTADOR
+   ========================================================= */
+
+.contador {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 30px;
+    height: 30px;
+
+    padding: 0 10px;
+
+    margin-left: 8px;
+
+    border-radius: 20px;
+
+    background: #1E88E5;
+    color: white;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* =========================================================
+   ESTADO VAZIO
+   ========================================================= */
+
+.vazio {
+    padding: 35px 20px;
+
+    text-align: center;
+
+    color: #CBD5E1;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border-radius: 14px;
+
+    border: 1px dashed rgba(255, 255, 255, 0.15);
+}
+
+/* =========================================================
+   HISTÓRICO - FUNDO
+   ========================================================= */
+
+.fundoHistorico {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    display: none;
+
+    z-index: 999;
+}
+
+.fundoHistorico.ativo {
+    display: block;
+}
+
+/* =========================================================
+   HISTÓRICO - PAINEL
+   ========================================================= */
+
+.painelHistorico {
+    position: fixed;
+
+    top: 0;
+    right: -450px;
+
+    width: 420px;
+    max-width: 100%;
+
+    height: 100vh;
+
+    background: #FFFFFF;
+
+    box-shadow:
+        -10px 0 30px rgba(0, 0, 0, 0.20);
+
+    transition: 0.35s;
+
+    z-index: 1000;
+
+    overflow-y: auto;
+}
+
+.painelHistorico.ativo {
+    right: 0;
+}
+
+/* =========================================================
+   CABEÇALHO DO HISTÓRICO
+   ========================================================= */
+
+.painelCabecalho {
+    background:
+        linear-gradient(
+            135deg,
+            #082B57,
+            #1459B8
+        );
+
+    color: white;
+
+    padding: 22px 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.painelCabecalho h2 {
+    color: white;
+    margin-bottom: 4px;
+}
+
+.painelCabecalho p {
+    color: #DDEBFF;
+    font-size: 13px;
+}
+
+/* =========================================================
+   BOTÃO FECHAR
+   ========================================================= */
+
+.painelCabecalho button {
+    width: 42px;
+    height: 42px;
+
+    min-width: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.18);
+
+    color: #FFFFFF;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    line-height: 1;
+
+    transition: 0.2s;
+
+    flex-shrink: 0;
+}
+
+.painelCabecalho button:hover {
+    background: rgba(255, 255, 255, 0.30);
+
+    transform: scale(1.05);
+}
+
+/* =========================================================
+   LINHA DO TEMPO
+   ========================================================= */
+
+#historicoTimeline {
+    padding: 22px;
+}
+
+.timelineItem {
+    position: relative;
+
+    padding: 18px 18px 18px 28px;
+
+    margin-bottom: 20px;
+
+    border-left: 3px solid #1877F2;
+
+    background: #F8FAFD;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.timelineItem::before {
+    content: "";
+
+    position: absolute;
+
+    left: -10px;
+    top: 22px;
+
+    width: 16px;
+    height: 16px;
+
+    border-radius: 50%;
+
+    background: #1877F2;
+
+    border: 3px solid white;
+}
+
+.timelineItem.teams {
+    border-left-color: #635BFF;
+}
+
+.timelineItem.teams::before {
+    background: #635BFF;
+}
+
+.timelineItem.email {
+    border-left-color: #0078D4;
+}
+
+.timelineItem.email::before {
+    background: #0078D4;
+}
+
+.timelineTitulo {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 8px;
+}
+
+.timelineTitulo h4 {
+    margin: 0;
+
+    font-size: 16px;
+
+    color: #1E293B;
+}
+
+.timelineData {
+    color: #64748B;
+    font-size: 12px;
+}
+
+.timelineObs {
+    color: #334155;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-top: 10px;
+}
+
+.timelineUsuario {
+    margin-top: 12px;
+
+    display: inline-block;
+
+    background: #E8F1FF;
+
+    color: #1459B8;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 15px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    .versao {
+        align-self: flex-start;
+    }
+
+    .formulario,
+    .lista,
+    .pesquisa {
+        padding: 18px;
+    }
+
+    .acoes {
+        flex-direction: column;
+    }
+
+    .acoes button {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .painelHistorico {
+        width: 100%;
+        right: -100%;
+    }
+}
+
+/* =========================================================
+   BOTÃO VOLTAR AO INÍCIO
+   ========================================================= */
+
+.header-acoes {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+}
+
+a.cp-voltar-inicio {
+    display: inline-flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 9px !important;
+
+    width: 165px !important;
+    height: 42px !important;
+
+    padding: 0 16px !important;
+    margin: 0 !important;
+
+    background: #0B2942 !important;
+    background-image: none !important;
+
+    border: 1px solid #4FC3F7 !important;
+
+    border-radius: 9px !important;
+
+    color: #FFFFFF !important;
+
+    text-decoration: none !important;
+
+    font-family: 'Poppins', sans-serif !important;
+
+    font-size: 13px !important;
+    font-weight: 600 !important;
+
+    cursor: pointer !important;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.25) !important;
+
+    transition: all 0.2s ease !important;
+}
+
+a.cp-voltar-inicio .cp-voltar-icone {
+    display: inline-flex !important;
+
+    color: #4FC3F7 !important;
+
+    font-size: 20px !important;
+    font-weight: 400 !important;
+
+    line-height: 1 !important;
+}
+
+a.cp-voltar-inicio span:not(.cp-voltar-icone) {
+    color: #FFFFFF !important;
+}
+
+a.cp-voltar-inicio:hover {
+    background: #123F61 !important;
+
+    background-image: none !important;
+
+    border-color: #81D4FA !important;
+
+    color: #FFFFFF !important;
+
+    transform: translateY(-1px) !important;
+
+    box-shadow:
+        0 6px 16px rgba(0, 0, 0, 0.30) !important;
+}
+
+a.cp-voltar-inicio:hover .cp-voltar-icone {
+    color: #81D4FA !important;
+}
+
+a.cp-voltar-inicio:hover span:not(.cp-voltar-icone) {
+    color: #FFFFFF !important;
+}
+/* Cabeçalho da página */
+body {
+    background-color: #07172a;
+}
+
+/* Título principal */
+h1 {
+    color: #55c7ff;
+    letter-spacing: -0.6px;
+}
+
+/* Painel do formulário de novo atendimento */
+form,
+.formulario,
+.novo-atendimento {
+    background: #102944 !important;
+    border: 1px solid #294968;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* Campos do formulário */
+form input,
+form select,
+form textarea,
+.formulario input,
+.formulario select,
+.formulario textarea,
+.novo-atendimento input,
+.novo-atendimento select,
+.novo-atendimento textarea {
+    background-color: #f0f5fb;
+    color: #172b43;
+    border-radius: 8px;
+}
+
+/* Botão salvar */
+#salvar {
+    background: linear-gradient(100deg, #087bea, #159cff);
+    color: #ffffff;
+    border: 1px solid #42b4ff;
+    border-radius: 9px;
+    font-weight: 700;
+}
+
+#salvar:hover {
+    filter: brightness(1.08);
+}
+
+body {
+    background-color: #061426;
+    background-image:
+        linear-gradient(
+            rgba(4, 17, 34, 0.48),
+            rgba(4, 17, 34, 0.58)
+        ),
+        url("../img/fundo2.png");
+
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Evita que o fundo seja escondido por um container */
+html {
+    background-color: #061426;
+}

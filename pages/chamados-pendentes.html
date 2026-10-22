@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Central de Chamados Pendentes | Suporte T.I.</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/chamados-pendentes.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- =====================================================
+             CABEÇALHO
+             ===================================================== -->
+
+        <header>
+
+            <div>
+                <h1>Central de Chamados Pendentes</h1>
+
+                <p>
+                    Grupo Aval • Toledo Piza Advogados
+                </p>
+            </div>
+
+            <div class="header-acoes">
+
+                <a
+                    href="../index.html"
+                    class="cp-voltar-inicio"
+                >
+                    <span class="cp-voltar-icone">←</span>
+
+                    <span>
+                        Voltar ao Início
+                    </span>
+                </a>
+
+            </div>
+
+        </header>
+
+
+        <!-- =====================================================
+             CONTEÚDO PRINCIPAL
+             ===================================================== -->
+
+        <main class="content">
+
+
+            <!-- =================================================
+                 INTRODUÇÃO
+                 ================================================= -->
+
+            <section class="intro">
+
+                <div>
+
+                    <p>
+                        Registre atendimentos realizados fora do GLPI
+                        e acompanhe as cobranças de chamados.
+                    </p>
+
+                </div>
+
+                <div class="status-indicator">
+                    <span></span>
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 NOVO ATENDIMENTO
+                 ================================================= -->
+
+            <section class="formulario">
+
+                <div class="section-title">
+
+                    <div>
+                        <h2>Novo Atendimento</h2>
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     CAMPOS
+                     ================================================= -->
+
+                <div class="grid">
+
+
+                    <!-- FUNCIONÁRIO -->
+
+                    <div class="campo">
+
+                        <label for="funcionario">
+                            Funcionário
+                        </label>
+
+                        <input
+                            type="text"
+                            id="funcionario"
+                            placeholder="Nome do funcionário"
+                        >
+
+                    </div>
+
+
+                    <!-- FILIAL -->
+
+                    <div class="campo">
+
+                        <label for="filial">
+                            Filial
+                        </label>
+
+                        <select
+                            id="filial"
+                            required
+                        >
+
+                            <option value="">
+                                Selecione a filial
+                            </option>
+
+                            <option value="Matriz">
+                                Matriz
+                            </option>
+
+                            <option value="Aviação">
+                                Aviação
+                            </option>
+
+                            <option value="Savério">
+                                Savério
+                            </option>
+
+                            <option value="Marechal">
+                                Marechal
+                            </option>
+
+                            <option value="Aguapei">
+                                Aguapei
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- CARTEIRA -->
+
+                    <div class="campo">
+
+                        <label for="carteira">
+                            Carteira / Setor
+                        </label>
+
+                        <select
+                            id="carteira"
+                            required
+                            disabled
+                        >
+
+                            <option value="">
+                                Primeiro selecione a filial
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- CATEGORIA -->
+
+                    <div class="campo">
+
+                        <label for="categoria">
+                            Categoria
+                        </label>
+
+                        <select id="categoria">
+
+                            <option value="">
+                                Selecione a categoria
+                            </option>
+
+                            <option value="Payware">
+                                Payware
+                            </option>
+
+                            <option value="Headset">
+                                Headset
+                            </option>
+
+                            <option value="Periféricos">
+                                Periféricos
+                            </option>
+
+                            <option value="Internet / Rede">
+                                Internet / Rede
+                            </option>
+
+                            <option value="Outlook / Teams">
+                                Outlook / Teams
+                            </option>
+
+                            <option value="Acesso / Senha">
+                                Acesso / Senha
+                            </option>
+
+                            <option value="Desbloqueio / Reset de Senha">
+                                Desbloqueio / Reset de Senha
+                            </option>
+
+                            <option value="Autenticador">
+                                Autenticador
+                            </option>
+
+                            <option value="X-Lite">
+                                X-Lite
+                            </option>
+
+                            <option value="Bitlocker">
+                                Bitlocker
+                            </option>
+
+                            <option value="Outro">
+                                Outro
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- CANAL -->
+
+                    <div class="campo">
+
+                        <label for="canal">
+                            Canal
+                        </label>
+
+                        <select id="canal">
+
+                            <option value="">
+                                Selecione o canal
+                            </option>
+
+                            <option value="Microsoft Teams">
+                                Microsoft Teams
+                            </option>
+
+                            <option value="Presencial">
+                                Presencial
+                            </option>
+
+                            <option value="E-mail">
+                                E-mail
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- TÉCNICO RESPONSÁVEL -->
+
+                    <div class="campo">
+
+                        <label for="tecnico">
+                            Técnico responsável
+                        </label>
+
+                        <select id="tecnico">
+
+                            <option value="">
+                                Primeiro selecione a filial
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     DESCRIÇÃO
+                     ================================================= -->
+
+                <div class="campo descricao">
+
+                    <label for="descricao">
+                        Descrição do atendimento
+                    </label>
+
+                    <textarea
+                        id="descricao"
+                        rows="4"
+                        placeholder="Descreva rapidamente o atendimento realizado."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- =================================================
+                     RODAPÉ DO FORMULÁRIO
+                     ================================================= -->
+
+                <div class="form-footer">
+
+                    <div class="form-info">
+
+                        <span>●</span>
+
+                        O atendimento será salvo como pendente.
+
+                    </div>
+
+
+                    <button
+                        id="salvar"
+                        class="btn-salvar"
+                        type="button"
+                    >
+
+                        <span>＋</span>
+
+                        Salvar Atendimento
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 PESQUISA
+                 ================================================= -->
+
+            <section class="pesquisa">
+
+                <div class="search-icon">
+                    ⌕ Pesquisar
+                </div>
+
+                <input
+                    type="text"
+                    id="buscar"
+                    placeholder="Pesquisar funcionário, carteira ou técnico..."
+                >
+
+            </section>
+
+
+            <!-- =================================================
+                 LISTA DE ATENDIMENTOS
+                 ================================================= -->
+
+            <section class="lista">
+
+                <div class="lista-header">
+
+                    <div>
+
+                        <h2>
+                            Atendimentos Pendentes
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="listaChamados"
+                    class="lista-chamados"
+                ></div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================================================
+         HISTÓRICO DE COBRANÇAS
+         ========================================================= -->
+
+    <div
+        id="fundoHistorico"
+        class="fundoHistorico"
+        onclick="fecharHistorico()"
+    ></div>
+
+
+    <div
+        id="painelHistorico"
+        class="painelHistorico"
+    >
+
+        <!-- CABEÇALHO DO HISTÓRICO -->
+
+        <div class="painelCabecalho">
+
+            <div>
+
+                <span class="eyebrow">
+                    ACOMPANHAMENTO
+                </span>
+
+                <h2>
+                    📋 Histórico de Cobranças
+                </h2>
+
+                <p id="historicoFuncionario"></p>
+
+            </div>
+
+
+            <button
+                type="button"
+                onclick="fecharHistorico()"
+                class="fechar"
+                aria-label="Fechar histórico"
+            >
+                ✕
+            </button>
+
+        </div>
+
+
+        <!-- LINHA DO TEMPO -->
+
+        <div id="historicoTimeline"></div>
+
+    </div>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+         ========================================================= -->
+
+    <script src="../js/chamados-pendentes.js"></script>
+
+</body>
+
+</html>
